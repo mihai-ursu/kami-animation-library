@@ -1,0 +1,21 @@
+@use "utils" as *;
+
+.grid {
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, var(--column-width)));
+  gap: 0 2rem;
+  margin: 0;
+
+  @include breakpoint-down(medium) {
+    grid-column: 2 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0 1rem;
+    margin: 0;
+  }
+
+  @include breakpoint-down(small) {
+    gap: 0 1rem;
+    margin: 0;
+  }
+}

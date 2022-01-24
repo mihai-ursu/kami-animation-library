@@ -1,0 +1,12 @@
+.header {
+  grid-column: 1 / span 12;
+  height: 12rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+}

@@ -1,0 +1,95 @@
+@use "./src/utils" as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  color: var(--color-black);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-sans);
+  font-size: 1.8rem;
+}
+
+:root {
+  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-black: #000000;
+  --color-gray-900: #1f1f1f;
+  --color-gray-600: #616367;
+  --color-gray-500: #a3a3a3;
+  --color-gray-400: #b1b1b1;
+  --color-gray-300: #c4c4c4;
+  --color-gray-200: #cecece;
+  --color-gray-150: #f0f0f0;
+  --color-gray-100: #f8f8f8;
+  --color-white: #ffffff;
+  --color-gray-900-transparent: rgba(34, 34, 34, 0.8);
+  --color-black-rgb: rgba(0, 0, 0, 0.99);
+  --color-black-rgb-light: rgba(0, 0, 0, 0.2);
+
+  --color-alert-300: #d14848;
+
+  --column-width: 8rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid {
+  &.full-width {
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(auto, var(--column-width))) 1fr;
+    grid-column: 1 / span 14;
+    height: 100%;
+    gap: 0 2rem;
+    margin: 0;
+
+    @include breakpoint-down(medium) {
+      grid-template-columns: 2rem repeat(6, 1fr) 2rem;
+      gap: 0 1rem;
+      margin: 0;
+    }
+
+    @include breakpoint-down(small) {
+      grid-template-columns: 1rem repeat(6, 1fr) 1rem;
+      gap: 0 1rem;
+      margin: 0;
+    }
+  }
+
+  &.max-width {
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, var(--column-width)));
+    gap: 0 2rem;
+    margin: 0;
+
+    @include breakpoint-down(medium) {
+      grid-column: 2 / span 6;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0 1rem;
+      margin: 0;
+    }
+
+    @include breakpoint-down(small) {
+      gap: 0 1rem;
+      margin: 0;
+    }
+  }
+}
