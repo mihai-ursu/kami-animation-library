@@ -1,12 +1,18 @@
 .header {
-  grid-column: 1 / span 12;
   height: 12rem;
+  align-items: center;
+}
+
+.row {
+  grid-column: 1 / span 12;
   display: flex;
   justify-content: space-between;
+  height: 100%;
   align-items: center;
 }
 
 .navigation {
   display: flex;
   gap: 2rem;
+  justify-content: flex-end;
 }

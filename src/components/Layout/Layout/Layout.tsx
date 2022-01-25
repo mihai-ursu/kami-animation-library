@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { FC } from "react";
-import FullWidthGrid from "../Grid/FullWidthGrid/FullWidthGrid";
-import MaxWidthGrid from "../Grid/MaxWidthGrid/MaxWidthGrid";
 import Header from "../Header/Header";
 
 const Layout: FC = ({ children }) => {
@@ -15,12 +13,10 @@ const Layout: FC = ({ children }) => {
           content="This is an animation library with over 40 animations."
         />
       </Head>
-      <FullWidthGrid>
-        <MaxWidthGrid>
-          <Header />
-        </MaxWidthGrid>
+      <div className="grid full-width">
+        <Header />
         <main className="grid full-width">{children}</main>
-      </FullWidthGrid>
+      </div>
     </>
   );
 };

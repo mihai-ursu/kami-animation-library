@@ -1,0 +1,14 @@
+.wrapper {
+  grid-column: 1 / span 12;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.text_wrapper {
+  overflow: hidden;
+}
+
+.text {
+  display: block;
+}
